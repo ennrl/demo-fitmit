@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
+    <title>FitMit</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/train.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+
+<div class="container screen train display-none">
+    <div class="flexOnScreen">
+        <div class="titleBar">
+            <div class="title">Умеренная</div>
+            <div class="progressBox">
+                <div class="text">4/8</div>
+                <div class="progress">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="flexOnScreen space-between">
+            <div class="trainBox">
+                <div class="info">
+                    <div class="name">Выпады со штангой</div>
+                    <div class="description">
+                        lorem ipsum mit dolar Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur distinctio dolores nam provident rem sed sit vitae. Aliquid aut dolor enim in laboriosam numquam odit ratione sapiente velit voluptatibus.
+                    </div>
+                    <div class="data">Количество: 10</div>
+                </div>
+            </div>
+            <div class="buttonsBox">
+                <div class="buttonT yellow">
+                    <div class="icon">
+                        <img src="/sf-symbols/hourglass.png" alt="">
+                    </div>
+                    <div class="name">Запустить таймер</div>
+                </div>
+                <div class="buttonT green">
+                    <div class="icon">
+                        <img src="/sf-symbols/checkmark.png" alt="">
+                    </div>
+                    <div class="name">Выполнено</div>
+                </div>
+                <div class="buttonT red">
+                    <div class="icon">
+                        <img src="/sf-symbols/xmark.png" alt="">
+                    </div>
+                    <div class="name">Закончить тренировку</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container screen firstStart display-none">
+    <div class="flexOnScreen flex-center">
+        <div class="logo">
+            <img src="/AppIcons/FitMit-iOS-ClearLight-128x128@2x.png" alt="app-icon">
+        </div>
+        <div class="title">FitMit</div>
+        <div class="description">Твои тренировки в одном месте</div>
+        <div class="list">
+            <div class="item">
+                <div class="icon">
+                    <img src="/sf-symbols/ipad.gen2.sizes.png" alt="">
+                </div>
+                <div class="name">Удобный интерфейс</div>
+            </div>
+            <div class="item">
+                <div class="icon">
+                    <img src="/sf-symbols/server.rack.png" alt="">
+                </div>
+                <div class="name">Локальное хранение</div>
+            </div>
+            <div class="item">
+                <div class="icon">
+                    <img src="/sf-symbols/macbook.and.iphone.png" alt="">
+                </div>
+                <div class="name">Кроссплатформенность</div>
+            </div>
+        </div>
+    </div>
+    <div class="FullClearButton">
+        <div class="icon">
+            <img src="/sf-symbols/chevron.left.png" alt="">
+        </div>
+        <div class="name">Начать использование</div>
+    </div>
+</div>
+
+<div class="container screen changeInfo display-none">
+    <div class="flexOnScreen">
+        <div class="title">Изменить данные</div>
+        <div class="inputBox">
+            <div class="label">Имя</div>
+            <input type="text" name="name" data-name="Имя">
+        </div>
+        <div class="inputBox">
+            <div class="label">Текущий вес</div>
+            <input type="number" min="40" value="60" step="1" max="200" name="weight" data-name="Текущий вес">
+        </div>
+        <div class="inputBox">
+            <div class="label">Текущий рост</div>
+            <input type="number" min="100" max="300" value="160" step="1" name="height" data-name="Текущий рост">
+        </div>
+        <div class="inputBox">
+            <div class="label">Желаемый вес</div>
+            <input type="number" min="40" max="200" step="1" value="60" name="weight-to" data-name="Желаемый вес">
+        </div>
+        <!--<div class="inputBox">
+            <div class="label">Кол-во шагов в день:</div>
+            <input type="number" min="1000" max="99999" value="10000" name="steps-to" step="100" data-name="Шаги">
+        </div>-->
+        <div class="inputBox">
+            <div class="label">Тренировок в день</div>
+            <input type="number" min="1" max="30" value="10" name="train-to" step="1" data-name="Тренировки">
+        </div>
+
+    </div>
+    <div class="FullClearButton">
+        <div class="icon">
+            <img src="/sf-symbols/externaldrive.badge.plus.png" alt="">
+        </div>
+        <div class="name">Сохранить данные</div>
+    </div>
+</div>
+
+<div class="container screen home display-none">
+    <div class="flexOnScreen display-none" data-name="home">
+        <div class="helloBox">
+            <div class="title">Добро пожаловать,</div>
+            <div class="name" data-home="name">...</div>
+        </div>
+        <!--<div class="widget made-in-dev">
+            <div class="titleBar">
+                <div class="icon">
+                    <img src="/sf-symbols/figure.walk.png" alt="walk-icon">
+                </div>
+                <div class="text">Шагов за день</div>
+            </div>
+            <div class="info">
+                <div class="big">5000</div>
+                <div class="mini">Цель: <span data-home="steps-to"></span></div>
+            </div>
+        </div>-->
+        <div class="widget">
+            <div class="titleBar">
+                <div class="icon">
+                    <img src="/sf-symbols/figure.dance.png" alt="">
+                </div>
+                <div class="text">Упражнений за день</div>
+            </div>
+            <div class="info">
+                <div class="big" data-func="train-days">...</div>
+                <div class="mini">Цель: <span data-home="train-to"></span></div>
+            </div>
+            <div class="button" id="home-goto-trains">
+                <div class="icon">
+                    <img src="/sf-symbols/figure.flexibility.png" alt="">
+                </div>
+                <div class="name">Перейти к тренировкам</div>
+            </div>
+        </div>
+        <div class="widget">
+            <div class="titleBar">
+                <div class="icon">
+                    <img src="/sf-symbols/scalemass.png" alt="">
+                </div>
+                <div class="text">Вес</div>
+            </div>
+            <div class="info">
+                <div class="big"><span data-home="weight">...</span> кг.</div>
+                <div class="mini">Цель: <span data-home="weight-to">...</span> кг.</div>
+            </div>
+            <div class="button" id="home-button-change">
+                <div class="icon">
+                    <img src="/sf-symbols/plus.forwardslash.minus.png" alt="walk-icon">
+                </div>
+                <div class="name">Внести изменения</div>
+            </div>
+        </div>
+    </div>
+    <div class="flexOnScreen" data-name="trening">
+        <div class="titleMax">Тренировки</div>
+        <div class="trainingWidget">
+            <div class="titleBox">
+                <div class="icon">
+                    <img src="/sf-symbols/figure.cooldown.png" alt="">
+                </div>
+                <div class="name">Простая</div>
+            </div>
+            <div class="table">
+                <div class="row">
+                    <div>Упражнения</div>
+                    <div class="bold">4</div>
+                </div>
+                <div class="row">
+                    <div>Время</div>
+                    <div class="bold">5 минут</div>
+                </div>
+            </div>
+            <div class="button" id="train-start-light">
+                <div class="icon">
+                    <img src="/sf-symbols/chevron.left.png" alt="">
+                </div>
+                Запустить тренировку
+            </div>
+        </div>
+
+        <div class="trainingWidget">
+            <div class="titleBox">
+                <div class="icon">
+                    <img src="/sf-symbols/figure.martial.arts.png" alt="">
+                </div>
+                <div class="name">Умеренная</div>
+            </div>
+            <div class="table">
+                <div class="row">
+                    <div>Упражнения</div>
+                    <div class="bold">8</div>
+                </div>
+                <div class="row">
+                    <div>Время</div>
+                    <div class="bold">10 минут</div>
+                </div>
+            </div>
+            <div class="button" id="train-start-medium">
+                <div class="icon">
+                    <img src="/sf-symbols/chevron.left.png" alt="">
+                </div>
+                Запустить тренировку
+            </div>
+        </div>
+
+        <div class="trainingWidget">
+            <div class="titleBox">
+                <div class="icon">
+                    <img src="/sf-symbols/figure.pilates.png" alt="">
+                </div>
+                <div class="name">Сложная</div>
+            </div>
+            <div class="table">
+                <div class="row">
+                    <div>Упражнения</div>
+                    <div class="bold">16</div>
+                </div>
+                <div class="row">
+                    <div>Время</div>
+                    <div class="bold">25 минут</div>
+                </div>
+            </div>
+            <div class="button" id="train-start-hard">
+                <div class="icon">
+                    <img src="/sf-symbols/chevron.left.png" alt="">
+                </div>
+                Запустить тренировку
+            </div>
+        </div>
+
+    </div>
+    <div class="flexOnScreen" data-name="profile">
+        <div class="titleMax">Профиль</div>
+        <div class="profileWidget">
+            <div class="titleBox">
+                <div class="icon">
+                    <img src="/sf-symbols/person.png" alt="">
+                </div>
+                <div class="name" data-home="name">...</div>
+            </div>
+            <div class="table">
+                <div class="row">
+                    <div>
+                        <div class="icon">
+                            <img src="/sf-symbols/scalemass.png" alt="">
+                        </div>
+                        <div class="name">Вес</div>
+                    </div>
+                    <div class="bold"><span data-home="weight">...</span> кг</div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="icon">
+                            <img src="/sf-symbols/figure.stand.png" alt="">
+                        </div>
+                        <div class="name">Рост</div>
+                    </div>
+                    <div class="bold"><span data-home="height">...</span> см</div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="icon">
+                            <img src="/sf-symbols/figure.run.treadmill.png" alt="">
+                        </div>
+                        <div class="name">Всего упражнений</div>
+                    </div>
+                    <div class="bold"><span data-func="all-trains">...</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="recordsWidget">
+            <div class="titleBox">
+                <div class="name">Цели</div>
+            </div>
+            <div class="table">
+                <div class="row">
+                    <div>
+                        <div class="icon">
+                            <img src="/sf-symbols/scalemass.png" alt="">
+                        </div>
+                        Вес
+                    </div>
+                    <div class="bold"><span data-home="weight-to">...</span> кг</div>
+                </div>
+                <!--<div class="row">
+                    <div>
+                        <div class="icon">
+                            <img src="/sf-symbols/figure.walk.png" alt="">
+                        </div>
+                        Шаги
+                    </div>
+                    <div class="bold"><span data-home="steps-to">...</span></div>
+                </div>-->
+                <div class="row">
+                    <div>
+                        <div class="icon">
+                            <img src="/sf-symbols/figure.run.treadmill.png" alt="">
+                        </div>
+                        Упражнений в день
+                    </div>
+                    <div class="bold"><span data-home="train-to">...</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="FullClearButton" id="changeInfo">
+            <div class="icon">
+                <img src="/sf-symbols/pencil.png" alt="">
+            </div>
+            <div class="name">Изменить данные</div>
+        </div>
+        <!--<div class="FullClearButton">
+            <div class="icon">
+                <img src="/sf-symbols/info.circle.png" alt="">
+            </div>
+            <div class="name">О приложении</div>
+        </div>-->
+    </div>
+    <div class="bottomBar">
+        <div class="FullItem" data-click="home">
+            <div class="icon">
+                <img src="/sf-symbols/house.png" alt="">
+            </div>
+            <div class="name">Сводка</div>
+        </div>
+        <div class="Items">
+            <div class="item" data-click="trening">
+                <div class="icon">
+                    <img src="/sf-symbols/figure.run.treadmill.png" alt="">
+                </div>
+            </div>
+            <div class="item" data-click="profile">
+                <div class="icon">
+                    <img src="/sf-symbols/person.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
