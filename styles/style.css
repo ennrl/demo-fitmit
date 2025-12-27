@@ -1,0 +1,608 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+*:not(textarea):not(input) {
+    user-select: none;
+    -webkit-user-select: none;
+}
+.screen {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    background: linear-gradient(180deg, #12141B 0%, #000622 100%);
+    color: white;
+
+}
+.screen .flexOnScreen {
+    flex: 1;
+}
+.flex-center {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.titleMax {
+    font-size: 32px;
+    font-weight: bold;
+}
+.description {
+    font-size: 16px;
+    opacity: 0.5;
+}
+.FullClearButton {
+    /* Профиль */
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    height: 50px;
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0px 0px 50px rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+
+    /* Inside auto layout */
+    flex: none;
+    flex-grow: 0;
+    width: 100%;
+}
+.FullClearButton .icon {
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.FullClearButton .icon img {
+    max-height: 20px;
+}
+.screen .list {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+.screen .list .item {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.screen .list .item .name {
+    flex: 1;
+}
+.screen .logo {
+    max-width: 80px;
+    max-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.screen .logo img {
+    max-width: 80px;
+    max-height: 80px;
+}
+.screen .list .item .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.screen .list .item .icon img {
+
+    max-height: 30px;
+}
+.display-none {
+    display: none !important;
+}
+.screen .bottomBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.screen .bottomBar .Items {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.screen .bottomBar .icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.screen .bottomBar .icon img {
+    max-height: 40%;
+    max-width: 40%;
+}
+.screen .bottomBar .FullItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1000px;
+    padding-right: 20px;
+    gap: 5px;
+    outline: 1px solid rgba(255, 255, 255, 0.15);
+    outline-offset: -1px;
+}
+.screen .bottomBar .FullItem.active {
+    background: rgba(0, 122, 255, 0.2);
+}
+.screen .bottomBar .FullItem, .screen .bottomBar .Items .item {
+    transition: 0.3s all;
+}
+.screen .bottomBar .Items .item.active {
+    background: rgba(0, 122, 255, 0.2);
+}
+.screen .bottomBar .Items .item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1000px;
+    width: 50px;
+    height: 50px;
+    outline: 1px solid rgba(255, 255, 255, 0.15);
+    outline-offset: -1px;
+}
+.screen .widget {
+    /* Шаги */
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 10px;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+
+    /* Inside auto layout */
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+
+}
+.screen .widget .titleBar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.screen .widget .titleBar .text {
+    font-size: 16px;
+    font-weight: bold;
+    flex: 1;
+}
+.screen .widget .titleBar .icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.screen .widget .titleBar .icon img {
+    max-height: 80%;
+    max-width: 80%;
+}
+.screen .widget .info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+}
+.screen .widget .info .big {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-family: 'Nunito', sans-serif;
+}
+.screen .widget .info .big * {
+    font-family: 'Nunito', sans-serif;
+}
+.screen .widget .info .mini {
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.5;
+}
+.screen .helloBox .title {
+    font-size: 20px;
+    font-weight: normal;
+}
+.screen .helloBox .name {
+    font-size: 32px;
+    font-weight: bold;
+}
+.screen .helloBox {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.screen .flexOnScreen {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.screen .widget .button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    background: rgba(0, 122, 255, 0.2);
+    border-radius: 1000px;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+}
+.screen .widget .button .icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.screen .widget .button .icon img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+
+
+.screen .trainingWidget, .screen .profileWidget, .screen .recordsWidget {
+    /* Шаги */
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 10px;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+
+    /* Inside auto layout */
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+
+}
+.screen .trainingWidget .titleBox, .screen .profileWidget .titleBox{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.screen .recordsWidget .titleBox {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+.screen .trainingWidget .titleBox .icon, .screen .profileWidget .titleBox .icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.screen .profileWidget .titleBox .icon {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.05);
+    outline: 1px solid rgba(255, 255, 255, 0.05);
+    outline-offset: -1px;
+    border-radius: 1000px;
+}
+.screen .trainingWidget .titleBox .icon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.screen .profileWidget .titleBox .icon img {
+    max-width: 50%;
+    max-height: 50%;
+}
+.screen .trainingWidget .titleBox .name {
+    font-size: 24px;
+    font-weight: bold;
+}
+.screen .profileWidget .titleBox .name {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.screen .trainingWidget .button, .screen .profileWidget .button, .screen .recordsWidget .button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    background: rgba(0, 122, 255, 0.2);
+    border-radius: 1000px;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    cursor: pointer;
+}
+.screen .trainingWidget .button .icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.screen .trainingWidget .button .icon img {
+    max-width: 80%;
+    max-height: 80%;
+}
+.screen .trainingWidget .table, .screen .profileWidget .table, .screen .recordsWidget .table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    width: 100%;
+}
+.screen .trainingWidget .table .row, .screen .profileWidget .table .row, .screen .recordsWidget .table .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.screen .profileWidget .table .row div, .screen .recordsWidget .table .row div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+.screen .trainingWidget .table .bold, .screen .profileWidget .table .bold, .screen .recordsWidget .table .bold {
+    font-weight: bold;
+    font-size: 14px;
+}
+.screen .profileWidget .table .row .icon, .screen .recordsWidget .table .row .icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.screen .profileWidget .table .row .icon img, .screen .recordsWidget .table .row .icon img {
+    max-width: 70%;
+    max-height: 70%;
+
+}
+.made-in-dev * {
+    filter: blur(20px);
+}
+.made-in-dev::after {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    content: "Еще в разработке =/";
+}
+.inputBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+.inputBox input {
+    background: rgba(0, 0, 0, 0);
+    outline: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+}
+.inputBox input:focus {
+    outline: 1px solid rgba(255, 255, 255, 0.15);
+    outline-offset: 0px
+}
+.inputBox .label {
+    width: 100%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.inputBox .number-button {
+    background: rgba(255, 255, 255, 0.15);
+    color: transparent;
+    height: 25px;
+    width: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+}
+.inputBox .number-button:active {
+    filter: brightness(160%);
+}
+
+.inputBox .number-button.plus {
+    margin-top: -55px;
+    border-top-right-radius: 10px;
+    background: rgba(255, 255, 255, 0.15) url("/sf-symbols/plus.png") no-repeat;
+    background-size: 20%;
+    background-position:center center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+}
+.inputBox .number-button.minus {
+    border-bottom-right-radius: 10px;
+    background: rgba(255, 255, 255, 0.15) url("/sf-symbols/minus.png") no-repeat;
+    background-size: 20%;
+    background-position:center center;
+    margin-top: -5px
+}
+
+.screen.train {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+}
+.screen.train .titleBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.screen.train .titleBar .progressBox {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: stretch;
+    flex: 1;
+}
+.screen.train .titleBar .progressBox .progress {
+    background: rgba(255, 255, 255, 0.15);
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.screen.train .titleBar .progressBox .progress .bar {
+    background: #34C759;
+    width: 50%;
+    height: 100%;
+}
+.screen.train .trainBox {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+.screen.train .trainBox .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.screen.train .trainBox .info .name {
+    font-size: 20px;
+    font-weight: bold;
+}
+.screen.train .trainBox .info .description {
+    font-size: 16px;
+    opacity: 0.5;
+    font-family: 'Nunito', 'Montserrat', sans-serif;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+}
+.flexOnScreen.space-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.screen.train .buttonsBox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.screen.train .buttonsBox .buttonT {
+    background: rgba(255, 255, 255, 0.15);
+    height: 50px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+.screen.train .buttonsBox .buttonT .icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.screen.train .buttonsBox .buttonT .icon img {
+    max-height: 20px;
+}
+.screen.train .buttonsBox .buttonT .name {
+    flex: 1;
+    text-align: center;
+}
+.screen.home .button {
+    cursor: pointer;
+}
+.screen.train .buttonsBox .buttonT.green {
+    background: rgba(52, 199, 89, 0.2);
+}
+.screen.train .buttonsBox .buttonT.red {
+    background: rgba(255, 56, 60, 0.2);
+}
+.screen.train .buttonsBox .buttonT.yellow {
+    transition: 0.01s;
+    background: linear-gradient(to right, rgba(255, 141, 40, 1) 0%, rgba(255, 141, 40, 0.2) 0%);
+}
